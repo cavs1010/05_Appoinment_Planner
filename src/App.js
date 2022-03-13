@@ -14,6 +14,17 @@ function App() {
     APPOINTMENTS: "/appointments",
   };
 
+  const addNewContact = (name, phone, email)=>{
+    let newContact = {'name':name, 'phone':phone, 'email':email};
+    setContacts((prev) =>{
+      return [...prev, newContact]
+    });
+  }
+
+  // Function that checks everything is working
+  const handleOnClick = ()=>{
+    addNewContact('Camilo', 2535490, 'cavs1010@gmail.com');
+  };
   /*
   Implement functions to add data to
   contacts and appointments
@@ -43,6 +54,9 @@ function App() {
             <AppointmentsPage />
           </Route>
         </Switch>
+        <button onClick={handleOnClick}>
+          Proving
+        </button>
       </main>
     </>
   );
