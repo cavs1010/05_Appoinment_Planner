@@ -21,9 +21,16 @@ function App() {
     });
   }
 
+  const addNewApp = (title, contact, date, time) =>{
+    let newApp = {'title':title, 'contact':contact, 'date':date, 'time':time};
+    setAppoinments((prev) =>{
+      return [...prev, newApp]
+    });
+  }
   // Function that checks everything is working
   const handleOnClick = ()=>{
     addNewContact('Camilo', 2535490, 'cavs1010@gmail.com');
+    addNewApp('Mr',2343,'April 15','5:00 pm');
   };
   /*
   Implement functions to add data to
