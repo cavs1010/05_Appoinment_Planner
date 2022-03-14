@@ -28,10 +28,10 @@ function App() {
     });
   }
   // Function that checks everything is working
-  const handleOnClick = ()=>{
-    addNewContact('Camilo', 2535490, 'cavs1010@gmail.com');
-    addNewApp('Mr',2343,'April 15','5:00 pm');
-  };
+  // const handleOnClick = ()=>{
+  //   addNewContact('Camilo', 2535490, 'cavs1010@gmail.com');
+  //   addNewApp('Mr',2343,'April 15','5:00 pm');
+  // };
   /*
   Implement functions to add data to
   contacts and appointments
@@ -61,9 +61,9 @@ function App() {
             <AppointmentsPage />
           </Route>
         </Switch>
-        <button onClick={handleOnClick}>
+        {/* <button onClick={handleOnClick}>
           Proving
-        </button>
+        </button> */}
       </main>
     </>
   );
