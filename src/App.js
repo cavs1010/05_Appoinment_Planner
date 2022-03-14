@@ -28,10 +28,11 @@ function App() {
     });
   }
   // Function that checks everything is working
-  // const handleOnClick = ()=>{
-  //   addNewContact('Camilo', 2535490, 'cavs1010@gmail.com');
-  //   addNewApp('Mr',2343,'April 15','5:00 pm');
-  // };
+
+  const handleOnClick = ()=>{
+    addNewContact('Camilo', 2535490, 'cavs1010@gmail.com');
+    addNewApp('Mr',2343,'April 15','5:00 pm');
+  };
   /*
   Implement functions to add data to
   contacts and appointments
@@ -53,17 +54,15 @@ function App() {
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
-             {/* Add props to ContactsPage */}
-            <ContactsPage />
+            <ContactsPage contacts={contacts} addNewContact={addNewContact}/>
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            {/* Add props to AppointmentsPage */}
-            <AppointmentsPage />
+            <AppointmentsPage appoinments={appoinments} addNewApp={addNewApp}/>
           </Route>
         </Switch>
-        {/* <button onClick={handleOnClick}>
+        <button onClick={handleOnClick}>
           Proving
-        </button> */}
+        </button>
       </main>
     </>
   );
