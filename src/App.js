@@ -27,16 +27,13 @@ function App() {
       return [...prev, newApp]
     });
   }
-  // Function that checks everything is working
 
+  // Function that checks everything is working
   const handleOnClick = ()=>{
     addNewContact('Camilo', 2535490, 'cavs1010@gmail.com');
     addNewApp('Mr',2343,'April 15','5:00 pm');
   };
-  /*
-  Implement functions to add data to
-  contacts and appointments
-  */
+
 
   return (
     <>
