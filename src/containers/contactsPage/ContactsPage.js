@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export const ContactsPage = (props) => {
+export const ContactsPage = ({contacts, addNewContact}) => {
  
   const [name, setName] = useState('CAAAA');
   const[phone, setPhone] = useState('asaas');
