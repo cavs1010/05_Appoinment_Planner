@@ -19,11 +19,14 @@ export const ContactsPage = ({contacts, addNewContact}) => {
     */
   };
 
-  
+
   /*
   Using hooks, check for contact name in the 
   contacts array variable in props
   */
+ useEffect(()=>{
+   console.log('El nombre se cambio')
+ },[name]);
 
   return (
     <div>
