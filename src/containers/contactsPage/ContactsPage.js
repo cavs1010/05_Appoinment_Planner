@@ -1,13 +1,16 @@
 import React, {useState} from "react";
+import { ContactForm } from "../../components/contactForm/ContactForm";
 
 export const ContactsPage = ({contacts, addNewContact}) => {
  
-  const [name, setName] = useState('CAAAA');
-  const[phone, setPhone] = useState('asaas');
-  const[email, setEmail] = useState('sasa');
+  const [name, setName] = useState('Nombre');
+  const[phone, setPhone] = useState('telefono');
+  const[email, setEmail] = useState('correo');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    addNewContact(name, phone, email);
+    console.log('Submision')
     /*
     Add contact info and clear data
     if the contact name is not a duplicate
@@ -23,6 +26,11 @@ export const ContactsPage = ({contacts, addNewContact}) => {
     <div>
       <section>
         <h2>Add Contact</h2> 
+        <ContactForm
+          name={name} setName={setName}
+          phone={phone} setPhone={setPhone}
+          email={email} setEmail={setEmail}
+          handleSubmit={handleSubmit}/>
       </section>
       <hr />
       <section>
