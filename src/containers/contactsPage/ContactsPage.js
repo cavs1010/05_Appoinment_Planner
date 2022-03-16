@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm";
 
 export const ContactsPage = ({contacts, addNewContact}) => {
@@ -10,13 +10,16 @@ export const ContactsPage = ({contacts, addNewContact}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addNewContact(name, phone, email);
-    console.log('Submision')
+    setName('');
+    setPhone('');
+    setEmail('');
     /*
     Add contact info and clear data
     if the contact name is not a duplicate
     */
   };
 
+  
   /*
   Using hooks, check for contact name in the 
   contacts array variable in props
