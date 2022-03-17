@@ -2,31 +2,37 @@ import React, {useState, useEffect} from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm";
 
 export const ContactsPage = ({contacts, addNewContact}) => {
- 
-  const [name, setName] = useState('Nombre');
-  const[phone, setPhone] = useState('telefono');
-  const[email, setEmail] = useState('correo');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addNewContact(name, phone, email);
-    setName('');
-    setPhone('');
-    setEmail('');
-    /*
-    Add contact info and clear data
-    if the contact name is not a duplicate
-    */
-  };
-
-
+  //States
+  const [name, setName] = useState('');
+  const[phone, setPhone] = useState('');
+  const[email, setEmail] = useState('');
+  const[isDuplicated, setIsDuplicated] = useState(false);
+  
   /*
   Using hooks, check for contact name in the 
   contacts array variable in props
   */
+ //Hooks
  useEffect(()=>{
-   console.log('El nombre se cambio')
+  let namesList = contacts.map(value => value['name'])
+  for (let i = 0; i <= namesList.length-1; i++){
+    if (namesList[i]===name){
+      setIsDuplicated(true);
+    }
+  }
+  //console.log(isDuplicated);
  },[name]);
+
+   //Submission
+   const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isDuplicated === false){
+      addNewContact(name, phone, email);
+      setName('');
+      setPhone('');
+      setEmail('');
+    }
+  };
 
   return (
     <div>

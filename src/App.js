@@ -6,7 +6,8 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
   
-  const [contacts, setContacts] = useState([{'name':'CAmilo', 'phone':'phone', 'email':'email'}]);
+  const [contacts, setContacts] = useState([{'name':'Camilo', 'phone':'phone', 'email':'email'},
+                                            {'name':'Andres', 'phone':'fono', 'email':'Correo'}]);
   const [appoinments, setAppoinments] = useState([]);
 
   const ROUTES = {
