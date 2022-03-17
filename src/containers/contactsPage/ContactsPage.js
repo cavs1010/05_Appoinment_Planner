@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm";
+import { TileList } from '../../components/tileList/TileList';
 
 export const ContactsPage = ({contacts, addNewContact}) => {
   //States
@@ -8,10 +9,6 @@ export const ContactsPage = ({contacts, addNewContact}) => {
   const[email, setEmail] = useState('');
   const[isDuplicated, setIsDuplicated] = useState(false);
   
-  /*
-  Using hooks, check for contact name in the 
-  contacts array variable in props
-  */
  //Hooks
  useEffect(()=>{
   let namesList = contacts.map(value => value['name'])
@@ -20,7 +17,6 @@ export const ContactsPage = ({contacts, addNewContact}) => {
       setIsDuplicated(true);
     }
   }
-  //console.log(isDuplicated);
  },[name]);
 
    //Submission
@@ -47,6 +43,7 @@ export const ContactsPage = ({contacts, addNewContact}) => {
       <hr />
       <section>
         <h2>Contacts</h2>
+        <TileList contacts={contacts}/>
       </section>
     </div>
   );
