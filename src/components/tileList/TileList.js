@@ -6,7 +6,7 @@ export const TileList = ({contacts}) => {
   return (
     <div>
       {contacts.map((contact)=>{
-        return (<Tile key={contact.name} phone={contact.phone} email={contact.email}></Tile>);}
+        return (<Tile key={contact} />);}
       )}
     </div>
   );
