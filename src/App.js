@@ -8,7 +8,7 @@ function App() {
   
   const [contacts, setContacts] = useState([{'name':'Camilo', 'phone':'phone', 'email':'email'},
                                             {'name':'Andres', 'phone':'fono', 'email':'Correo'}]);
-  const [appoinments, setAppoinments] = useState([]);
+  const [appoinments, setAppoinments] = useState([{'title':'Nombre', 'contact':'Contacto', 'date':'Fecha', 'time':'hora'}]);
 
   const ROUTES = {
     CONTACTS: "/contacts",
@@ -48,7 +48,7 @@ function App() {
             <ContactsPage contacts={contacts} addNewContact={addNewContact}/>
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            <AppointmentsPage appoinments={appoinments} addNewApp={addNewApp}/>
+            <AppointmentsPage appoinments={appoinments} addNewApp={addNewApp} contacts={contacts}/>
           </Route>
         </Switch>
       </main>
