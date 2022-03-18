@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AppointmentForm } from '../../components/appointmentForm/AppointmentForm'
+import { TileList } from "../../components/tileList/TileList";
 
 
 export const AppointmentsPage = ({appoinments, addNewApp, contacts}) => {
@@ -39,6 +40,7 @@ export const AppointmentsPage = ({appoinments, addNewApp, contacts}) => {
       <hr />
       <section>
         <h2>Appointments</h2>
+        <TileList objectsToDisplay={appoinments}/>
       </section>
     </div>
   );

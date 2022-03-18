@@ -29,7 +29,7 @@ export const AppointmentForm = ({
       <label>Time:</label>
       <input type="time" value={time} onChange={(event) => setTime(event.target.value)}></input>
       <label>Contact:</label>
-      <ContactPicker contacts={contacts} onChange={(event) => setContact(event.target.value)}/>
+      <ContactPicker contacts={contacts} onChange={(event) => setContact(event.target.value)} contact={contact}/>
       <input type='submit'/>
     </form>
   );
