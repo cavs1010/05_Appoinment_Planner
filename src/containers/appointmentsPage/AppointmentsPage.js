@@ -12,10 +12,11 @@ export const AppointmentsPage = ({appoinments, addNewApp, contacts}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /*
-    Add contact info and clear data  
-    */
-   
+    addNewApp(title, contact, date, time)
+    setTitle('');
+    setContact('');
+    setDate('');
+    setTime('');
   };
 
   return (
@@ -32,6 +33,7 @@ export const AppointmentsPage = ({appoinments, addNewApp, contacts}) => {
           setDate={setDate}
           time={time}
           setTime={setTime}
+          handleSubmit={handleSubmit}
         />
       </section>
       <hr />

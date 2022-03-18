@@ -21,15 +21,16 @@ export const AppointmentForm = ({
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>Title:</label>
-      <input type="text" onChange={(event) => setTitle(event.target.value)}></input>
+      <input type="text" value={title} onChange={(event) => setTitle(event.target.value)}></input>
       <label>Date:</label>
-      <input type="date" onChange={(event) => setDate(event.target.value)}></input>
+      <input type="date" value={date} onChange={(event) => setDate(event.target.value)} min={getTodayString()}></input>
       <label>Time:</label>
-      <input type="time" onChange={(event) => setTime(event.target.value)}></input>
+      <input type="time" value={time} onChange={(event) => setTime(event.target.value)}></input>
       <label>Contact:</label>
       <ContactPicker contacts={contacts} onChange={(event) => setContact(event.target.value)}/>
+      <input type='submit'/>
     </form>
   );
 };
